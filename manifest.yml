@@ -1,0 +1,39 @@
+modules:
+  jira:issuePanel:
+    - key: forgestitch-issue-panel
+      resource: issue-panel-resource
+      resolver:
+        function: main-resolver
+      viewportSize: medium
+      title: ForgeStitch AI Assistant
+      icon: https://atlassian.com
+  jira:projectPage:
+    - key: forgestitch-project-dashboard
+      resource: dashboard-resource
+      resolver:
+        function: main-resolver
+      title: ForgeStitch Sprint Pulse
+  function:
+    - key: main-resolver
+      handler: index.handler
+
+resources:
+  - key: issue-panel-resource
+    path: dist/issue-panel
+  - key: dashboard-resource
+    path: dist/dashboard
+
+permissions:
+  scopes:
+    - storage:app
+    - read:jira-work
+    - write:jira-work
+    - read:confluence-content.all
+    - write:confluence-content
+    - read:confluence-space.summary
+
+app:
+  runtime:
+    name: nodejs22.x
+  id: ari:cloud:ecosystem::app/f6849341-1dcd-4cf0-a878-07ded8b1c4a9
+

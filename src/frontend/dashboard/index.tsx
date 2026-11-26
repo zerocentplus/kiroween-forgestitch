@@ -1,2 +1,8 @@
-// Project Dashboard entry point — implementation added in task 11.3
-export {};
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { DashboardApp } from './DashboardApp';
+
+const container = document.getElementById('root');
+if (container) {
+  createRoot(container).render(<DashboardApp />);
+}
