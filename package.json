@@ -1,0 +1,26 @@
+{
+  "name": "forge-stitch",
+  "version": "1.0.0",
+  "description": "AI-powered Atlassian Forge application for Kiroween Hackathon",
+  "main": "src/resolvers/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest --run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@forge/api": "^8.5.1",
+    "@forge/bridge": "^7.4.0",
+    "@forge/resolver": "^2.0.2",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "fast-check": "^3.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.0.0"
+  }
+}

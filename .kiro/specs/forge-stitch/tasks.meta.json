@@ -1,0 +1,277 @@
+{
+  "pbtResults": {
+    "2.2 Write property test for DocBuilder": {
+      "status": "passed",
+      "lastRunTimestamp": 1795701573571
+    }
+  },
+  "executionHistory": {
+    "1. Scaffold project structure and shared type definitions": [
+      {
+        "executionId": "efe7d892-4fcc-4224-8ae5-5d81a3ad47e7",
+        "chatSessionId": "sess_2b938330-cfac-497c-99df-3c2498946ce5",
+        "timestamp": 1795700898247
+      },
+      {
+        "executionId": "efe7d892-4fcc-4224-8ae5-5d81a3ad47e7",
+        "chatSessionId": "sess_2b938330-cfac-497c-99df-3c2498946ce5",
+        "timestamp": 1795701241001
+      }
+    ],
+    "2.1 Implement `src/builders/docBuilder.ts`": [
+      {
+        "executionId": "6e920312-0dfb-4e7f-8f11-a1d7a615cb1e",
+        "chatSessionId": "sess_42ce8287-15fd-493f-ae5e-28bb2b9f2c19",
+        "timestamp": 1795701403697
+      },
+      {
+        "executionId": "6e920312-0dfb-4e7f-8f11-a1d7a615cb1e",
+        "chatSessionId": "sess_42ce8287-15fd-493f-ae5e-28bb2b9f2c19",
+        "timestamp": 1795701446990
+      }
+    ],
+    "2. Implement DocBuilder (pure functions)": [
+      {
+        "executionId": "6e920312-0dfb-4e7f-8f11-a1d7a615cb1e",
+        "chatSessionId": "sess_42ce8287-15fd-493f-ae5e-28bb2b9f2c19",
+        "timestamp": 1795701447043
+      }
+    ],
+    "2.2 Write property test for DocBuilder": [
+      {
+        "executionId": "24a40bb4-5ba3-436b-8db7-8f510199ef19",
+        "chatSessionId": "sess_98fbd9e1-4f4e-43e7-ad8b-08a3867255e7",
+        "timestamp": 1795701519970
+      },
+      {
+        "executionId": "24a40bb4-5ba3-436b-8db7-8f510199ef19",
+        "chatSessionId": "sess_98fbd9e1-4f4e-43e7-ad8b-08a3867255e7",
+        "timestamp": 1795701581263
+      }
+    ],
+    "3.1 Implement `src/detectors/stallDetector.ts`": [
+      {
+        "executionId": "5d5dcfc1-11ce-4359-8d36-10bf87acc27c",
+        "chatSessionId": "sess_7d3cf256-5c26-4d17-88a8-d3d8e09caf2e",
+        "timestamp": 1795701645689
+      },
+      {
+        "executionId": "5d5dcfc1-11ce-4359-8d36-10bf87acc27c",
+        "chatSessionId": "sess_7d3cf256-5c26-4d17-88a8-d3d8e09caf2e",
+        "timestamp": 1795701676977
+      }
+    ],
+    "3.4 Implement `src/detectors/blockerDetector.ts`": [
+      {
+        "executionId": "5d5dcfc1-11ce-4359-8d36-10bf87acc27c",
+        "chatSessionId": "sess_7d3cf256-5c26-4d17-88a8-d3d8e09caf2e",
+        "timestamp": 1795701648008
+      },
+      {
+        "executionId": "5d5dcfc1-11ce-4359-8d36-10bf87acc27c",
+        "chatSessionId": "sess_7d3cf256-5c26-4d17-88a8-d3d8e09caf2e",
+        "timestamp": 1795701677193
+      }
+    ],
+    "3. Implement StallDetector and BlockerDetector (pure functions)": [
+      {
+        "executionId": "5d5dcfc1-11ce-4359-8d36-10bf87acc27c",
+        "chatSessionId": "sess_7d3cf256-5c26-4d17-88a8-d3d8e09caf2e",
+        "timestamp": 1795701677232
+      }
+    ],
+    "4. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "c905cd14-12b1-41dc-bec2-2bff10719ca8",
+        "chatSessionId": "sess_a0258721-2c3b-4ab9-9798-d1be51f6de35",
+        "timestamp": 1795701859092
+      },
+      {
+        "executionId": "c905cd14-12b1-41dc-bec2-2bff10719ca8",
+        "chatSessionId": "sess_a0258721-2c3b-4ab9-9798-d1be51f6de35",
+        "timestamp": 1795701893836
+      }
+    ],
+    "5.1 Implement live API clients": [
+      {
+        "executionId": "55c2b4ee-954f-4858-acd4-2a774882fd5a",
+        "chatSessionId": "sess_9ca2f6c0-5a3b-48a7-b534-37500e04382d",
+        "timestamp": 1795701981457
+      },
+      {
+        "executionId": "55c2b4ee-954f-4858-acd4-2a774882fd5a",
+        "chatSessionId": "sess_9ca2f6c0-5a3b-48a7-b534-37500e04382d",
+        "timestamp": 1795702319304
+      }
+    ],
+    "5.2 Implement `src/demo/sandboxData.ts`": [
+      {
+        "executionId": "55c2b4ee-954f-4858-acd4-2a774882fd5a",
+        "chatSessionId": "sess_9ca2f6c0-5a3b-48a7-b534-37500e04382d",
+        "timestamp": 1795701983597
+      },
+      {
+        "executionId": "55c2b4ee-954f-4858-acd4-2a774882fd5a",
+        "chatSessionId": "sess_9ca2f6c0-5a3b-48a7-b534-37500e04382d",
+        "timestamp": 1795702319755
+      }
+    ],
+    "5.3 Implement `src/demo/demoInterceptor.ts`": [
+      {
+        "executionId": "55c2b4ee-954f-4858-acd4-2a774882fd5a",
+        "chatSessionId": "sess_9ca2f6c0-5a3b-48a7-b534-37500e04382d",
+        "timestamp": 1795702322083
+      },
+      {
+        "executionId": "55c2b4ee-954f-4858-acd4-2a774882fd5a",
+        "chatSessionId": "sess_9ca2f6c0-5a3b-48a7-b534-37500e04382d",
+        "timestamp": 1795702369551
+      }
+    ],
+    "5. Implement API Gateway Layer and Demo Mode": [
+      {
+        "executionId": "55c2b4ee-954f-4858-acd4-2a774882fd5a",
+        "chatSessionId": "sess_9ca2f6c0-5a3b-48a7-b534-37500e04382d",
+        "timestamp": 1795702369595
+      }
+    ],
+    "6.1 Implement `src/stitchers/issueStitcher.ts`": [
+      {
+        "executionId": "51e5227f-7439-4b76-af64-1b40a0178dcf",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795702728512
+      },
+      {
+        "executionId": "51e5227f-7439-4b76-af64-1b40a0178dcf",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795702935335
+      }
+    ],
+    "6. Implement IssueStitcher": [
+      {
+        "executionId": "51e5227f-7439-4b76-af64-1b40a0178dcf",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795702935382
+      }
+    ],
+    "7.1 Implement `src/stitchers/sprintStitcher.ts`": [
+      {
+        "executionId": "944db372-c9df-437f-9aeb-64ab292764fc",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703026260
+      },
+      {
+        "executionId": "944db372-c9df-437f-9aeb-64ab292764fc",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703111064
+      }
+    ],
+    "7. Implement SprintStitcher": [
+      {
+        "executionId": "944db372-c9df-437f-9aeb-64ab292764fc",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703111108
+      }
+    ],
+    "8.1 Implement `src/resolvers/issueResolver.ts`, `sprintResolver.ts`, `demoResolver.ts`": [
+      {
+        "executionId": "a24f5a9a-30fa-4368-8f59-d31de8ba21e5",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703220959
+      },
+      {
+        "executionId": "a24f5a9a-30fa-4368-8f59-d31de8ba21e5",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703319050
+      }
+    ],
+    "8.2 Implement `src/resolvers/index.ts`": [
+      {
+        "executionId": "a24f5a9a-30fa-4368-8f59-d31de8ba21e5",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703321360
+      },
+      {
+        "executionId": "a24f5a9a-30fa-4368-8f59-d31de8ba21e5",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703363298
+      }
+    ],
+    "8. Implement Forge Resolvers": [
+      {
+        "executionId": "a24f5a9a-30fa-4368-8f59-d31de8ba21e5",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703363364
+      }
+    ],
+    "9. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "c3f56a45-647b-453c-9d08-6dfaca5593c9",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703433186
+      }
+    ],
+    "10.1 Implement shared UI components": [
+      {
+        "executionId": "c3f56a45-647b-453c-9d08-6dfaca5593c9",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703437332
+      },
+      {
+        "executionId": "c3f56a45-647b-453c-9d08-6dfaca5593c9",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703528784
+      }
+    ],
+    "10.2 Implement Issue Panel data-display components": [
+      {
+        "executionId": "c3f56a45-647b-453c-9d08-6dfaca5593c9",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703531240
+      },
+      {
+        "executionId": "c3f56a45-647b-453c-9d08-6dfaca5593c9",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703623788
+      }
+    ],
+    "10.3 Implement `src/frontend/issue-panel/components/IssuePanelApp.tsx` and wire entry point": [
+      {
+        "executionId": "c3f56a45-647b-453c-9d08-6dfaca5593c9",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795703626394
+      },
+      {
+        "executionId": "87572ccd-342d-4cfe-b4b3-757993110498",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795706065706
+      }
+    ],
+    "10. Implement Issue Panel UI": [
+      {
+        "executionId": "87572ccd-342d-4cfe-b4b3-757993110498",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795706065757
+      }
+    ],
+    "11.1 Implement shared Dashboard components": [
+      {
+        "executionId": "cc41015f-6496-4950-af8b-9755d7243396",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795706187959
+      },
+      {
+        "executionId": "cc41015f-6496-4950-af8b-9755d7243396",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795706218186
+      }
+    ],
+    "11.2 Implement Dashboard data-display components": [
+      {
+        "executionId": "cc41015f-6496-4950-af8b-9755d7243396",
+        "chatSessionId": "sess_f8cfeda4-7be7-46f9-b69f-ea1d9d0da869",
+        "timestamp": 1795706220639
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+import { requestConfluence, assumeTrustedRoute } from '@forge/api';
+
+// ─── Interface definitions ────────────────────────────────────────────────────
+
+export interface ConfluencePage {
+  id: string;
+  title: string;
+  url: string;
+  spaceKey: string;
+  body: string;
+}
+
+export interface UpsertPageParams {
+  spaceKey: string;
+  title: string;
+  body: string;
+  existingPageId?: string;
+  parentPageId?: string;
+}
+
+export interface ConfluenceClient {
+  getPage(pageId: string): Promise<ConfluencePage>;
+  upsertPage(params: UpsertPageParams): Promise<ConfluencePage>;
+}
+
+// ─── Typed error ──────────────────────────────────────────────────────────────
+
+export class ConfluenceApiError extends Error {
+  httpStatus: number;
+  endpoint: string;
+
+  constructor(message: string, httpStatus: number, endpoint: string) {
+    super(message);
+    this.name = 'ConfluenceApiError';
+    this.httpStatus = httpStatus;
+    this.endpoint = endpoint;
+  }
+}
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+async function checkResponse(
+  response: { status: number; json(): Promise<unknown> },
+  endpoint: string,
+): Promise<unknown> {
+  if (response.status < 200 || response.status >= 300) {
+    throw new ConfluenceApiError(
+      `Confluence API request failed with status ${response.status}: ${endpoint}`,
+      response.status,
+      endpoint,
+    );
+  }
+  return response.json();
+}
+
+function mapPage(raw: Record<string, unknown>): ConfluencePage {
+  const links = raw['_links'] as Record<string, unknown> | undefined;
+  const space = raw['space'] as Record<string, unknown> | undefined;
+  const bodyStorage = (raw['body'] as Record<string, unknown> | undefined)?.['storage'] as Record<string, unknown> | undefined;
+
+  const baseUrl = (links?.['base'] as string) ?? '';
+  const webui = (links?.['webui'] as string) ?? '';
+
+  return {
+    id: String(raw['id']),
+    title: (raw['title'] as string) ?? '',
+    url: baseUrl + webui,
+    spaceKey: (space?.['key'] as string) ?? '',
+    body: (bodyStorage?.['value'] as string) ?? '',
+  };
+}
+
+// ─── LiveConfluenceClient ─────────────────────────────────────────────────────
+
+export class LiveConfluenceClient implements ConfluenceClient {
+  async getPage(pageId: string): Promise<ConfluencePage> {
+    const path = `/wiki/rest/api/content/${pageId}?expand=body.storage,version`;
+    const response = await requestConfluence(assumeTrustedRoute(path), { method: 'GET' });
+    const data = await checkResponse(response, path) as Record<string, unknown>;
+    return mapPage(data);
+  }
+
+  async upsertPage(params: UpsertPageParams): Promise<ConfluencePage> {
+    if (params.existingPageId) {
+      return this.updatePage(params);
+    }
+    return this.createPage(params);
+  }
+
+  private async createPage(params: UpsertPageParams): Promise<ConfluencePage> {
+    const path = '/wiki/rest/api/content';
+
+    const bodyPayload: Record<string, unknown> = {
+      type: 'page',
+      title: params.title,
+      space: { key: params.spaceKey },
+      body: {
+        storage: {
+          value: params.body,
+          representation: 'storage',
+        },
+      },
+    };
+
+    if (params.parentPageId) {
+      bodyPayload['ancestors'] = [{ id: params.parentPageId }];
+    }
+
+    const response = await requestConfluence(assumeTrustedRoute(path), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(bodyPayload),
+    });
+
+    const data = await checkResponse(response, path) as Record<string, unknown>;
+    return mapPage(data);
+  }
+
+  private async updatePage(params: UpsertPageParams): Promise<ConfluencePage> {
+    // We need the current version number before updating
+    const getPath = `/wiki/rest/api/content/${params.existingPageId}?expand=version`;
+    const getResponse = await requestConfluence(assumeTrustedRoute(getPath), { method: 'GET' });
+    const existing = await checkResponse(getResponse, getPath) as Record<string, unknown>;
+
+    const currentVersion = ((existing['version'] as Record<string, unknown>)?.['number'] as number) ?? 1;
+
+    const putPath = `/wiki/rest/api/content/${params.existingPageId}`;
+
+    const bodyPayload: Record<string, unknown> = {
+      type: 'page',
+      title: params.title,
+      version: { number: currentVersion + 1 },
+      body: {
+        storage: {
+          value: params.body,
+          representation: 'storage',
+        },
+      },
+    };
+
+    const response = await requestConfluence(assumeTrustedRoute(putPath), {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(bodyPayload),
+    });
+
+    const data = await checkResponse(response, putPath) as Record<string, unknown>;
+    return mapPage(data);
+  }
+}
