@@ -39,15 +39,15 @@ declare module '@forge/api' {
   export const requestJira: RequestProductMethod;
   export const requestConfluence: RequestProductMethod;
 
-  // ── asApp ──────────────────────────────────────────────────────────────────
+  // ── asUser ──────────────────────────────────────────────────────────────────
 
-  export interface AsAppMethods {
+  export interface asUserMethods {
     requestAtlassian(url: Route, init?: RequestInit): Promise<ApiResponse>;
     requestJira: RequestProductMethod;
     requestConfluence: RequestProductMethod;
   }
 
-  export function asApp(): AsAppMethods;
+  export function asUser(): asUserMethods;
 
   // ── Forge Storage KV store ────────────────────────────────────────────────
 

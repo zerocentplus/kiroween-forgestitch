@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import type { SprintWithIssues } from '../../../types';
 
 interface SprintHeaderProps {

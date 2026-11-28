@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import type { StitchError } from '../../../errors/types';
 
 interface ErrorBannerProps {
@@ -39,7 +39,7 @@ const retryButtonStyle: React.CSSProperties = {
 /**
  * ErrorBanner (Dashboard)
  *
- * Renders error.message only — never httpStatus, endpoint, or stack trace.
+ * Renders error.message only � never httpStatus, endpoint, or stack trace.
  * Requirements: 2.7, 8.4, 8.5
  */
 export function ErrorBanner({ error, onRetry }: ErrorBannerProps): React.ReactElement {

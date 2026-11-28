@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { invoke } from '@forge/bridge';
 import type { StitchResult } from '../../../errors/types';
 

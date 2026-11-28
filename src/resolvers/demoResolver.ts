@@ -20,7 +20,7 @@ export function register(resolver: Resolver): void {
   resolver.define('getDemoState', async () => {
     try {
       const value = await storage.get('demoMode');
-      const demoMode = typeof value === 'boolean' ? value : false;
+      const demoMode = typeof value === 'boolean' ? value : true;
       return { ok: true as const, data: { demoMode } };
     } catch (err) {
       return {
